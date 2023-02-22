@@ -10,5 +10,23 @@ buttons.forEach(element => {
         }else{
             display.innerText += element.id     
         }
+        if(display.innerText !=""){
+            buttonAddQ.disabled = false;
+        }else{
+            buttonAddQ.disabled = true;
+        }
     }
+
 })
+
+
+// if(e.target.classList.contains('input-card')){
+//     if(input > '0'){
+//         buttonPush.disabled = false;
+//     }else{
+//         buttonPush.disabled = true;
+//     }
+//     if(input == ''){
+//         buttonPush.disabled = true;
+//     }
+// }
