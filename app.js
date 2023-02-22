@@ -28,7 +28,7 @@ function renderData(data){
     dataContainer.innerHTML = ""
     for(let d of data){
         let row = document.createElement('p')
-        row.innerHTML = d
+        row.innerText = d
         dataContainer.appendChild(row)
     }
 }
