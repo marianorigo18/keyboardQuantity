@@ -12,27 +12,23 @@ buttons.forEach(element => {
             display.innerText += element.id     
         }
         if(element.id=="buttonAddQy"){
-            console.log(display.innerText.substr(0,display.innerText.length-11));
+            data.push(display.innerText.substr(0,display.innerText.length-11))
             display.innerText= ""
+            renderData(data)
         }
         if(display.innerText !=""){
             buttonAddQ.disabled = false;
         }else{
             buttonAddQ.disabled = true;
         }
-
     }
-
 })
-
-
-// if(e.target.classList.contains('input-card')){
-//     if(input > '0'){
-//         buttonPush.disabled = false;
-//     }else{
-//         buttonPush.disabled = true;
-//     }
-//     if(input == ''){
-//         buttonPush.disabled = true;
-//     }
-// }
+function renderData(data){
+    const dataContainer = document.querySelector('.container-data')
+    dataContainer.innerHTML = ""
+    for(let d of data){
+        let row = document.createElement('p')
+        row.innerHTML = d
+        dataContainer.appendChild(row)
+    }
+}
