@@ -1,6 +1,7 @@
 const display = document.querySelector('#display');
 const buttons = document.querySelectorAll('button');
 const buttonAddQ = document.querySelector('#buttonAddQy');
+const data = [];
 
 buttons.forEach(element => {
     element.onclick=()=>{
@@ -10,11 +11,16 @@ buttons.forEach(element => {
         }else{
             display.innerText += element.id     
         }
+        if(element.id=="buttonAddQy"){
+            console.log(display.innerText.substr(0,display.innerText.length-11));
+            display.innerText= ""
+        }
         if(display.innerText !=""){
             buttonAddQ.disabled = false;
         }else{
             buttonAddQ.disabled = true;
         }
+
     }
 
 })
