@@ -3,6 +3,11 @@ const buttons = document.querySelectorAll('button');
 const buttonAddQ = document.querySelector('#buttonAddQy');
 const data = [];
 
+document.addEventListener('DOMContentLoaded', () => {
+    data = JSON.parse(localStorage.getItem('dataCalculator')) || [];
+    renderData()
+})
+
 buttons.forEach(element => {
     element.onclick=()=>{
         if(element.id=="backspace"){
@@ -31,4 +36,9 @@ function renderData(data){
         row.innerText = d
         dataContainer.appendChild(row)
     }
+    sincronizarStorage()
+}
+
+function sincronizarStorage(){
+    localStorage.setItem('dataCalculator', JSON.stringify(data));
 }
